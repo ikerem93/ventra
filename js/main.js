@@ -1243,7 +1243,7 @@
   });
 
   /* =========================================================
-     DEMO FORM (Formspree)
+     DEMO FORM (FormSubmit → info@v-tech.com.au)
      ========================================================= */
   const status = $("#formStatus");
   const submitBtn = $("button[type=submit]", form);
@@ -1258,9 +1258,9 @@
       $(":invalid", form).focus();
       return;
     }
-    if (form.action.includes("YOUR_FORM_ID")) {
-      setStatus("The form isn't connected yet. Please email us at info@v-tech.com.au.", "err");
-      console.warn("Ventra: set your Formspree form ID in the form's action attribute (index.html).");
+    if (location.protocol === "file:") {
+      setStatus("The form only sends from the live website. Please email us at info@v-tech.com.au.", "err");
+      console.warn("Ventra: FormSubmit rejects pages opened as local files; test the form on the live site.");
       return;
     }
     submitBtn.disabled = true;
@@ -1269,12 +1269,18 @@
     setStatus("", "");
     try {
       const res = await fetch(form.action, { method: "POST", body: new FormData(form), headers: { Accept: "application/json" } });
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const data = await res.json().catch(() => ({}));
+      // FormSubmit answers 200 with success "false" (e.g. before activation), so check the body too
+      if (!res.ok || String(data.success) !== "true") throw new Error(data.message || `HTTP ${res.status}`);
       form.reset();
       form.classList.remove("was-validated");
       setStatus("Thanks! We've received your request and will be in touch soon.", "ok");
     } catch (err) {
-      setStatus("Something went wrong. Please try again, or email info@v-tech.com.au.", "err");
+      console.warn("Ventra form:", err.message);
+      // Until the owner clicks "Activate Form" in the FormSubmit email, every send is refused
+      setStatus(/activat/i.test(err.message)
+        ? "This form is waiting for activation. Check the info@v-tech.com.au inbox (and spam) for the FormSubmit email and click Activate Form, then send again."
+        : "Something went wrong. Please try again, or email info@v-tech.com.au.", "err");
     } finally {
       submitBtn.disabled = false;
       spinner.classList.add("d-none");
