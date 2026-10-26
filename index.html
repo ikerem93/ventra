@@ -1,0 +1,1043 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ventra - Inventory Management</title>
+  <meta name="description" content="Ventra is an inventory management app and web dashboard. Scan barcodes, track stock across branches, get low-stock alerts and reports, in your own brand.">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+  <link rel="canonical" href="https://myventra.au/">
+  <meta name="theme-color" content="#040A18">
+  <!-- Google Search Console (only if you verify with the HTML tag method): -->
+  <!-- <meta name="google-site-verification" content="PASTE_YOUR_CODE_HERE"> -->
+
+  <!-- Social sharing (WhatsApp, LinkedIn, Facebook, X) -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Ventra">
+  <meta property="og:locale" content="en_AU">
+  <meta property="og:url" content="https://myventra.au/">
+  <meta property="og:title" content="Ventra - Inventory Management">
+  <meta property="og:description" content="An inventory management app and web dashboard. Scan barcodes, track stock across branches and get low-stock alerts, in your own brand.">
+  <meta property="og:image" content="https://myventra.au/assets/img/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Ventra Inventory Management: the web dashboard sign-in screen">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Ventra - Inventory Management">
+  <meta name="twitter:description" content="An inventory management app and web dashboard. Scan barcodes, track stock across branches and get low-stock alerts, in your own brand.">
+  <meta name="twitter:image" content="https://myventra.au/assets/img/og-image.jpg">
+  <meta name="twitter:image:alt" content="Ventra Inventory Management: the web dashboard sign-in screen">
+
+  <!-- Icons: Google Search needs a square favicon in multiples of 48px -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="48x48" href="assets/img/favicon-48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="assets/img/favicon-96.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/img/favicon-192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png">
+
+  <!-- Structured data: tells Google the site name ("Ventra") and the logo -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://myventra.au/#website",
+        "url": "https://myventra.au/",
+        "name": "Ventra",
+        "alternateName": ["Ventra Inventory Management", "myventra.au"],
+        "inLanguage": "en-AU",
+        "publisher": { "@id": "https://myventra.au/#organization" }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://myventra.au/#organization",
+        "name": "Ventra",
+        "url": "https://myventra.au/",
+        "logo": "https://myventra.au/assets/img/favicon-192.png",
+        "email": "info@v-tech.com.au",
+        "parentOrganization": { "@type": "Organization", "name": "VTech IT Solutions" }
+      },
+      {
+        "@type": ["WebPage", "FAQPage"],
+        "@id": "https://myventra.au/#webpage",
+        "url": "https://myventra.au/",
+        "name": "Ventra - Inventory Management",
+        "description": "Ventra is an inventory management app and web dashboard. Scan barcodes, track stock across branches, get low-stock alerts and reports, in your own brand.",
+        "isPartOf": { "@id": "https://myventra.au/#website" },
+        "about": { "@id": "https://myventra.au/#organization" },
+        "primaryImageOfPage": "https://myventra.au/assets/img/og-image.jpg",
+        "inLanguage": "en-AU",
+        "mainEntity": [
+          { "@type": "Question", "name": "Which devices does Ventra run on?",
+            "acceptedAnswer": { "@type": "Answer", "text": "The mobile app is on iPhone (App Store) and Android (Google Play). The dashboard runs in any modern web browser at app.myventra.au." } },
+          { "@type": "Question", "name": "How do my staff connect to our organisation?",
+            "acceptedAnswer": { "@type": "Answer", "text": "An admin adds each person in the dashboard and gives them a 4-digit code and a password. In the app, they scan your organisation's QR code or type its ID, then sign in." } },
+          { "@type": "Question", "name": "Can the app and dashboard use our own branding?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes. The app and the dashboard can carry your company's name, logo and colours, so your team sees them as your own tools." } },
+          { "@type": "Question", "name": "Can I manage more than one warehouse or branch?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes. Add as many locations as your plan allows. Each one keeps its own stock levels, and the dashboard switches between one branch and all branches." } },
+          { "@type": "Question", "name": "Do my products need barcodes already?",
+            "acceptedAnswer": { "@type": "Answer", "text": "No. Leave the barcode field empty and Ventra generates a Code 128 barcode for the product. You can print its label straight from the app." } },
+          { "@type": "Question", "name": "How do low-stock alerts work?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Set a minimum stock level for each product. When a product falls to or below that level, it appears under Alerts as low or out of stock, and you can add stock straight from the alert." } },
+          { "@type": "Question", "name": "Who can see and change what?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Admins manage everything from the dashboard. Managers work in the app and can request new products, which an admin approves. Every action is recorded in the audit log." } },
+          { "@type": "Question", "name": "Can I export reports?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes. The dashboard has daily and weekly movement reports, stock by category, and low and out-of-stock lists. You can download any of them as a PDF." } },
+          { "@type": "Question", "name": "What are packages?",
+            "acceptedAnswer": { "@type": "Answer", "text": "A package is a finished product made from parts you keep in stock, like a shelf unit made of panels, screws and brackets. You list its parts once. When sales creates an order, Ventra calculates every part needed, and when the warehouse confirms the order, stock is adjusted for you." } },
+          { "@type": "Question", "name": "Can Ventra connect to our online store or sales system?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes, on request. We build each connection to fit the online store or sales software you use. Send us a request and tell us what you use today." } }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+  <link href="css/style.css" rel="stylesheet">
+  <script>document.documentElement.classList.add("js");</script>
+</head>
+<body>
+
+  <div class="scroll-progress" aria-hidden="true"><span></span></div>
+
+  <!-- ============ NAVBAR ============ -->
+  <nav id="mainNav" class="navbar navbar-expand-lg fixed-top">
+    <div class="container nav-pill">
+      <a class="navbar-brand brand" href="#top" aria-label="Ventra home">
+        <img src="assets/img/ventra-icon.png" alt="" width="34" height="34">
+        <span>Ventra</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="bi bi-list"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item"><a class="nav-link" href="#app">App</a></li>
+          <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
+          <li class="nav-item"><a class="nav-link" href="#dashboard">Dashboard</a></li>
+          <li class="nav-item"><a class="nav-link" href="#packages">Packages</a></li>
+          <li class="nav-item"><a class="nav-link" href="#branding">Branding</a></li>
+          <li class="nav-item"><a class="nav-link" href="#plans">Plans</a></li>
+          <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
+        </ul>
+        <div class="nav-actions">
+          <a class="btn btn-v" href="#contact">Request a demo</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============ HERO: A WAREHOUSE AISLE, BEING SCANNED ============ -->
+  <header id="top" class="hero">
+    <canvas class="aisle" id="aisle" aria-hidden="true"></canvas>
+    <div class="aisle-fade" aria-hidden="true"></div>
+    <div class="scan-tags" id="scanTags" aria-hidden="true"></div>
+
+    <div class="container hero-inner">
+      <span class="live-chip"><span class="pulse"></span> Now on iPhone and Android</span>
+      <h1 class="hero-title scan-reveal">Know what's on every shelf,<br> <span class="grad">in every branch.</span></h1>
+      <p class="hero-lead">Ventra pairs a barcode-first mobile app for your floor team with a live web dashboard for managers. Same stock, same locations, same history, in your own brand.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-v btn-lg" href="#contact">Request a demo <i class="bi bi-arrow-right"></i></a>
+        <a class="btn btn-ghost btn-lg" href="#app"><i class="bi bi-phone"></i> Take the tour</a>
+      </div>
+      <div class="store-row">
+        <a class="store-btn" href="https://apps.apple.com/app/dds-inventory/id6814044538" target="_blank" rel="noopener" aria-label="Download Ventra on the App Store">
+          <i class="bi bi-apple"></i><span><small>Download on the</small>App Store</span>
+        </a>
+        <a class="store-btn" href="https://play.google.com/store/apps/details?id=au.dds.inventory" target="_blank" rel="noopener" aria-label="Get Ventra on Google Play">
+          <i class="bi bi-google-play"></i><span><small>Get it on</small>Google Play</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-hud" aria-hidden="true">
+      <span><small>Aisle</small><b>03</b></span>
+      <span><small>Bay</small><b id="hudBay">01</b></span>
+      <span><small>Scanned</small><b id="hudCount">0</b></span>
+    </div>
+
+    <div class="hero-devices" id="heroDevices">
+      <div class="phone ph-left"><img src="assets/img/app/inventory.jpg" alt="Ventra inventory list with search and stock filters"></div>
+      <div class="phone ph-center"><img src="assets/img/app/home.jpg" alt="Ventra app home screen with total products, low stock and out-of-stock counts"></div>
+      <div class="phone ph-right"><img src="assets/img/app/alerts.jpg" alt="Ventra alerts screen listing low and out-of-stock products"></div>
+    </div>
+  </header>
+
+  <!-- ============ ACTIVITY: FROM THE FLOOR TO THE DASHBOARD ============ -->
+  <section id="live" class="section night activity-sec">
+    <div class="container">
+      <div class="section-head text-center">
+        <h2 class="section-title scan-reveal">Know who moved what, and when</h2>
+        <p class="section-sub on-dark mx-auto">When someone on the floor adds, removes or marks stock as damaged, Ventra records their name, the product, the quantity, the branch and the time. Managers see it on the dashboard straight away.</p>
+      </div>
+
+      <div class="relay" id="relay">
+        <div class="relay-phone">
+          <span class="relay-cap"><b>1</b> On the floor</span>
+          <div class="phone phone-mini" aria-hidden="true">
+            <div class="mini-ui">
+              <div class="mu-status"><span>9:41</span><span><i class="bi bi-reception-4"></i> <i class="bi bi-wifi"></i> <i class="bi bi-battery-full"></i></span></div>
+              <div class="mu-head"><i class="bi bi-chevron-left"></i> Inventory action</div>
+              <div class="mu-body">
+                <div class="mu-card mu-user"><span class="avatar" id="ruAvatar">SK</span><div><b id="ruName">Sarah K.</b><small><i class="bi bi-geo-alt"></i> <span id="ruBranch">Melbourne</span></small></div></div>
+                <div class="mu-card mu-product"><span class="mu-thumb"><i class="bi bi-box-seam"></i></span><div><b id="ruItem">Black Bottom Track</b><small id="ruStock">132 in stock</small></div></div>
+                <div class="mu-seg"><span data-k="added" class="on"><i class="bi bi-plus-lg"></i> Add</span><span data-k="removed"><i class="bi bi-dash-lg"></i> Remove</span><span data-k="damaged"><i class="bi bi-heartbreak"></i> Damaged</span></div>
+                <div class="mu-card mu-qty"><span>−</span><b id="ruQty">50</b><span>+</span></div>
+                <div class="mu-card mu-reason" id="ruReasonRow">Reason <b id="ruReason">Purchase</b></div>
+                <span class="mu-confirm" id="ruConfirm">Confirm<span class="tap"></span></span>
+              </div>
+              <div class="mu-saved" id="ruSaved"><i class="bi bi-check-circle-fill"></i> Stock updated</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="relay-wire" aria-hidden="true">
+          <span class="wire"></span>
+          <span class="packet" id="packet">+50</span>
+        </div>
+
+        <div class="relay-dash">
+          <span class="relay-cap"><b>2</b> On the dashboard</span>
+          <div class="log-card" id="logCard">
+            <div class="log-head">
+              <div><b>Stock activity</b><small>All branches</small></div>
+              <span class="live-pill"><span class="pulse"></span> Live</span>
+            </div>
+            <div class="log-cols" aria-hidden="true"><span><i class="bi bi-person"></i> Who</span><span><i class="bi bi-box-seam"></i> What and how many</span><span><i class="bi bi-geo-alt"></i> Where and when</span></div>
+            <ol class="log" id="log" aria-label="Recent stock activity"></ol>
+            <p class="feed-note">Example data</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ STATEMENT: FROM MESS TO ORDER ============ -->
+  <section class="section night stmt-sec" id="statement">
+    <div class="container">
+      <p class="stmt-text" id="stmtText">Spreadsheets don't scan barcodes. Whiteboards don't send low-stock alerts. And nobody remembers who took the last box.</p>
+      <p class="stmt-answer scan-reveal">Ventra handles all three.</p>
+    </div>
+  </section>
+
+  <!-- ============ APP: PINNED PHONE STORY ============ -->
+  <section id="app" class="story" aria-label="The mobile app">
+    <div class="story-sticky">
+      <div class="container story-grid">
+        <div class="story-intro">
+          <h2 class="section-title scan-reveal">The whole stockroom in your team's pocket</h2>
+          <p class="section-sub on-dark">Staff sign in with a 4-digit code and get straight to work.</p>
+          <ol class="story-steps" id="storySteps">
+            <li class="on">
+              <button type="button" aria-current="step"><span class="ss-num">01</span>Home overview</button>
+              <div class="ss-body"><div><p>Totals, low stock, out of stock and the latest activity the moment you open the app.</p><ul class="chips"><li>Total products</li><li>Low stock</li><li>Recent activity</li></ul></div></div>
+            </li>
+            <li>
+              <button type="button"><span class="ss-num">02</span>Inventory</button>
+              <div class="ss-body"><div><p>Search by name or barcode, and filter by in stock, low, out of stock or unavailable.</p><ul class="chips"><li>Search</li><li>Barcode lookup</li><li>Stock filters</li></ul></div></div>
+            </li>
+            <li>
+              <button type="button"><span class="ss-num">03</span>Product detail</button>
+              <div class="ss-body"><div><p>Barcode, exact location, dimensions and stock level together on one screen.</p><ul class="chips"><li>Section, shelf &amp; slot</li><li>Dimensions</li><li>Stock level</li></ul></div></div>
+            </li>
+            <li>
+              <button type="button"><span class="ss-num">04</span>Stock actions</button>
+              <div class="ss-body"><div><p>Add, remove or mark damaged, with quick quantities and a reason for each movement.</p><ul class="chips"><li>Add</li><li>Remove</li><li>Damaged</li></ul></div></div>
+            </li>
+            <li>
+              <button type="button"><span class="ss-num">05</span>Alerts</button>
+              <div class="ss-body"><div><p>See what's running low or out, and restock with one tap.</p><ul class="chips"><li>Low stock</li><li>Out of stock</li><li>Restock</li></ul></div></div>
+            </li>
+            <li>
+              <button type="button"><span class="ss-num">06</span>Label printing</button>
+              <div class="ss-body"><div><p>Print or share a barcode label for any product, straight from the phone.</p><ul class="chips"><li>Code 128</li><li>Print</li><li>Share</li></ul></div></div>
+            </li>
+          </ol>
+        </div>
+
+        <div class="story-device">
+          <svg class="dial" viewBox="0 0 400 400" aria-hidden="true">
+            <circle class="dial-ticks" cx="200" cy="200" r="190"></circle>
+            <circle class="dial-track" cx="200" cy="200" r="176"></circle>
+            <circle class="dial-fill" id="dialFill" cx="200" cy="200" r="176" pathLength="100"></circle>
+          </svg>
+          <div class="sd-count" aria-hidden="true"><b id="sdNum">01</b><span>/ 06</span></div>
+          <div class="phone phone-story">
+            <div class="screens">
+              <img class="screen on" src="assets/img/app/home.jpg" alt="Home screen with inventory overview and quick actions">
+              <img class="screen" src="assets/img/app/inventory.jpg" alt="Inventory list with search and stock status filters" loading="lazy">
+              <img class="screen" src="assets/img/app/product-detail.jpg" alt="Product detail with barcode, location, dimensions and stock quantity" loading="lazy">
+              <img class="screen" src="assets/img/app/stock-action.jpg" alt="Inventory action screen to add, remove or mark stock as damaged" loading="lazy">
+              <img class="screen" src="assets/img/app/alerts.jpg" alt="Alerts screen listing out-of-stock and low-stock products" loading="lazy">
+              <img class="screen" src="assets/img/app/print-label.jpg" alt="Barcode label preview ready to print" loading="lazy">
+              <span class="wipe" aria-hidden="true"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FEATURES: APP + DASHBOARD ============ -->
+  <section id="features" class="section paper">
+    <div class="container">
+      <div class="section-head text-center">
+        <h2 class="section-title scan-reveal">Everything you need to manage your stock</h2>
+        <p class="section-sub mx-auto">Ventra has two parts that work together: a mobile app for the people handling stock, and a web dashboard for the people managing it.</p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-lg-6">
+          <article class="duo duo-app">
+            <div class="duo-peek" aria-hidden="true"><img src="assets/img/app/inventory.jpg" alt="" loading="lazy"></div>
+            <div class="duo-head">
+              <span class="duo-icon"><i class="bi bi-phone"></i></span>
+              <div><h3>Mobile app</h3><p>For your warehouse and store team</p></div>
+            </div>
+            <ul class="feat-list">
+              <li><i class="bi bi-upc-scan"></i><div><b>Scan barcodes</b><span>Point the camera at a barcode to find a product or update its stock.</span></div></li>
+              <li><i class="bi bi-arrow-left-right"></i><div><b>Stock in and out</b><span>Add, remove or mark items damaged, with a reason for each change.</span></div></li>
+              <li><i class="bi bi-bell"></i><div><b>Low-stock alerts</b><span>See what's running low or out, and restock in one tap.</span></div></li>
+              <li><i class="bi bi-geo-alt"></i><div><b>Exact locations</b><span>Section, shelf and slot for every product.</span></div></li>
+              <li><i class="bi bi-printer"></i><div><b>Barcode labels</b><span>No barcode? Ventra creates one, and you print the label from the app.</span></div></li>
+              <li><i class="bi bi-send"></i><div><b>Product requests</b><span>Managers ask for new products to be added to the catalogue.</span></div></li>
+            </ul>
+          </article>
+        </div>
+        <div class="col-lg-6">
+          <article class="duo duo-dash">
+            <div class="duo-peek" aria-hidden="true"><img src="assets/img/web-signin.jpg" alt="" loading="lazy"></div>
+            <div class="duo-head">
+              <span class="duo-icon"><i class="bi bi-display"></i></span>
+              <div><h3>Web dashboard</h3><p>For managers and admins</p></div>
+            </div>
+            <ul class="feat-list">
+              <li><i class="bi bi-buildings"></i><div><b>Every branch in one place</b><span>Switch between branches, or see all of them together.</span></div></li>
+              <li><i class="bi bi-file-earmark-bar-graph"></i><div><b>Reports and PDF export</b><span>Daily and weekly movements, stock by category and low-stock lists.</span></div></li>
+              <li><i class="bi bi-clipboard-check"></i><div><b>Approve requests</b><span>Accept or reject the products your managers ask for.</span></div></li>
+              <li><i class="bi bi-people"></i><div><b>Staff and roles</b><span>Add people with a 4-digit code and decide who can do what.</span></div></li>
+              <li><i class="bi bi-journal-text"></i><div><b>Audit log</b><span>Every change, with who made it and when.</span></div></li>
+              <li><i class="bi bi-palette"></i><div><b>Your branding</b><span>Your name, logo and colours on the app and the dashboard.</span></div></li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ DASHBOARD: INTERACTIVE CONTROL ROOM ============ -->
+  <section id="dashboard" class="section night dash-sec">
+    <div class="dash-glow" aria-hidden="true"></div>
+    <div class="container position-relative">
+      <div class="section-head text-center">
+        <h2 class="section-title scan-reveal">A live control room for managers</h2>
+        <p class="section-sub on-dark mx-auto">See stock, movements and people across every branch, and change any of it from the browser. This preview works: switch tabs, change the branch or approve a request.</p>
+      </div>
+
+      <div class="dash-stage" id="dashStage">
+        <div class="browser" id="dashBrowser">
+          <div class="browser-bar">
+            <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>
+            <span class="url"><i class="bi bi-lock-fill"></i> app.myventra.au</span>
+          </div>
+          <div class="dash">
+            <aside class="dash-side">
+              <div class="dash-org">
+                <img src="assets/img/ventra-icon.png" alt="" width="28" height="28">
+                <div><strong>Acme Joinery</strong><small>Tenant Admin</small></div>
+              </div>
+              <nav class="dash-nav" role="tablist" aria-label="Dashboard preview sections">
+                <button type="button" role="tab" aria-selected="true" aria-controls="dvOverview" id="dtOverview" data-view="dvOverview"><i class="bi bi-grid-1x2"></i> Overview</button>
+                <button type="button" role="tab" aria-selected="false" aria-controls="dvReports" id="dtReports" data-view="dvReports" tabindex="-1"><i class="bi bi-graph-up"></i> Reports</button>
+                <span class="dn-static"><i class="bi bi-box"></i> Products</span>
+                <span class="dn-static"><i class="bi bi-grid-3x3-gap"></i> Categories</span>
+                <span class="dn-static"><i class="bi bi-geo-alt"></i> Locations</span>
+                <button type="button" role="tab" aria-selected="false" aria-controls="dvRequests" id="dtRequests" data-view="dvRequests" tabindex="-1"><i class="bi bi-clipboard-check"></i> Requests <em id="reqBadge">3</em></button>
+                <span class="dn-static"><i class="bi bi-people"></i> People</span>
+                <button type="button" role="tab" aria-selected="false" aria-controls="dvAudit" id="dtAudit" data-view="dvAudit" tabindex="-1"><i class="bi bi-journal-text"></i> Audit log</button>
+              </nav>
+            </aside>
+
+            <div class="dash-main">
+              <div class="dash-top">
+                <button type="button" class="branch-select" id="branchBtn" aria-label="Change branch, currently All branches">
+                  <i class="bi bi-geo-alt"></i><span><small>Branch</small><b id="branchName">All branches</b></span><i class="bi bi-chevron-expand"></i>
+                </button>
+                <span class="live-pill"><span class="pulse"></span> Live</span>
+              </div>
+
+              <!-- Overview -->
+              <div class="dash-view on" role="tabpanel" id="dvOverview" aria-labelledby="dtOverview">
+                <div class="dash-title">
+                  <div><h4>Overview</h4><p id="branchSub">All locations, live inventory snapshot</p></div>
+                  <button type="button" class="dash-btn" data-goto="dvReports">Open reports</button>
+                </div>
+                <div class="kpi-grid">
+                  <div class="kpi"><small>Total products</small><strong data-kpi="0">184</strong></div>
+                  <div class="kpi"><small>Stock units</small><strong data-kpi="1">24,560</strong></div>
+                  <div class="kpi k-warn"><small>Low stock</small><strong data-kpi="2">33</strong></div>
+                  <div class="kpi k-bad"><small>Out of stock</small><strong data-kpi="3">12</strong></div>
+                </div>
+                <div class="dash-row">
+                  <div class="dash-card">
+                    <div class="dc-head"><h5>Movements this week</h5><span class="dc-meta"><b id="todayCount">47</b> today</span></div>
+                    <div class="bar-chart" id="barChart">
+                      <div class="bc-col"><i style="--h:46%"></i><span>Mon</span></div>
+                      <div class="bc-col"><i style="--h:72%"></i><span>Tue</span></div>
+                      <div class="bc-col"><i style="--h:58%"></i><span>Wed</span></div>
+                      <div class="bc-col"><i style="--h:92%"></i><span>Thu</span></div>
+                      <div class="bc-col"><i style="--h:66%"></i><span>Fri</span></div>
+                      <div class="bc-col"><i style="--h:28%"></i><span>Sat</span></div>
+                      <div class="bc-col"><i style="--h:12%"></i><span>Sun</span></div>
+                    </div>
+                  </div>
+                  <div class="dash-card dash-table">
+                    <div class="dc-head"><h5>Recent movements</h5></div>
+                    <table>
+                      <thead><tr><th>When</th><th>Staff</th><th>Product</th><th class="text-end">Qty</th></tr></thead>
+                      <tbody id="recentBody">
+                        <tr><td>10:42</td><td>Sarah K.</td><td>Black Bottom Track</td><td class="text-end q-pos">+50</td></tr>
+                        <tr><td>10:15</td><td>James T.</td><td>Soft Close Hinge 110°</td><td class="text-end q-neg">−12</td></tr>
+                        <tr><td>09:58</td><td>Ali R.</td><td>Glass Mirror 1070×2760</td><td class="text-end q-dmg">−1</td></tr>
+                        <tr><td>09:31</td><td>Sarah K.</td><td>Black Grip Profiles</td><td class="text-end q-pos">+120</td></tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Reports -->
+              <div class="dash-view" role="tabpanel" id="dvReports" aria-labelledby="dtReports" hidden>
+                <div class="dash-title">
+                  <div><h4>Reports</h4><p>Stock by category, all branches</p></div>
+                  <button type="button" class="dash-btn" id="pdfBtn"><i class="bi bi-file-earmark-pdf"></i> Download PDF</button>
+                </div>
+                <div class="seg" aria-hidden="true"><span>Movements</span><span class="on">Stock by category</span><span>Out &amp; low stock</span></div>
+                <div class="dash-card">
+                  <div class="cat-bars">
+                    <div class="cat"><span>Hardware</span><em>9,420</em><b style="--w:100%"></b></div>
+                    <div class="cat"><span>Wardrobe Aluminium</span><em>6,180</em><b style="--w:66%"></b></div>
+                    <div class="cat"><span>Glass</span><em>4,350</em><b style="--w:46%"></b></div>
+                    <div class="cat"><span>Storage</span><em>2,860</em><b style="--w:30%"></b></div>
+                    <div class="cat"><span>Edge Banding</span><em>1,750</em><b style="--w:19%"></b></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Requests -->
+              <div class="dash-view" role="tabpanel" id="dvRequests" aria-labelledby="dtRequests" hidden>
+                <div class="dash-title">
+                  <div><h4>Product requests</h4><p>Requests from managers waiting for your review</p></div>
+                </div>
+                <div class="req-list" id="reqList">
+                  <div class="req" data-item="Glass Shelf 8mm">
+                    <span class="avatar">JT</span>
+                    <div class="req-copy"><b>Glass Shelf 8mm</b><small>James T., Manager, Sydney</small></div>
+                    <div class="req-actions"><button type="button" class="ok" data-act="approve">Approve</button><button type="button" data-act="reject">Reject</button></div>
+                  </div>
+                  <div class="req" data-item="Drawer Runner 450">
+                    <span class="avatar a2">MO</span>
+                    <div class="req-copy"><b>Drawer Runner 450</b><small>Mia O., Manager, Melbourne</small></div>
+                    <div class="req-actions"><button type="button" class="ok" data-act="approve">Approve</button><button type="button" data-act="reject">Reject</button></div>
+                  </div>
+                  <div class="req" data-item="Edge Banding Oak 22mm">
+                    <span class="avatar a3">AR</span>
+                    <div class="req-copy"><b>Edge Banding Oak 22mm</b><small>Ali R., Manager, Brisbane</small></div>
+                    <div class="req-actions"><button type="button" class="ok" data-act="approve">Approve</button><button type="button" data-act="reject">Reject</button></div>
+                  </div>
+                </div>
+                <div class="req-empty" id="reqEmpty" hidden>
+                  <i class="bi bi-check2-all"></i>
+                  <b>All caught up</b>
+                  <span>New requests from managers appear here.</span>
+                  <button type="button" class="dash-btn" id="reqReset">Reset the preview</button>
+                </div>
+              </div>
+
+              <!-- Audit log -->
+              <div class="dash-view" role="tabpanel" id="dvAudit" aria-labelledby="dtAudit" hidden>
+                <div class="dash-title">
+                  <div><h4>Audit log</h4><p>Who did what, and when</p></div>
+                </div>
+                <div class="dash-card dash-table">
+                  <table>
+                    <thead><tr><th>When</th><th>Who</th><th>Action</th><th>Details</th></tr></thead>
+                    <tbody id="auditBody">
+                      <tr><td>10:42</td><td>Sarah K.</td><td><span class="tag t-green">Stock added</span></td><td>Black Bottom Track, +50</td></tr>
+                      <tr><td>10:20</td><td>Admin</td><td><span class="tag t-blue">Product edited</span></td><td>Soft Close Hinge 110°, min level 20</td></tr>
+                      <tr><td>10:15</td><td>James T.</td><td><span class="tag t-red">Stock removed</span></td><td>Soft Close Hinge 110°, −12</td></tr>
+                      <tr><td>09:58</td><td>Ali R.</td><td><span class="tag t-amber">Damaged</span></td><td>Glass Mirror 1070×2760, −1</td></tr>
+                      <tr><td>09:40</td><td>Admin</td><td><span class="tag t-blue">Signed in</span></td><td>Dashboard</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <div class="dash-toast" id="dashToast" role="status" aria-live="polite"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SPECIAL FEATURE: PACKAGES AND ORDERS ============ -->
+  <section id="packages" class="section night pk-sec">
+    <div class="pk-glow" aria-hidden="true"></div>
+    <div class="container position-relative">
+      <div class="section-head text-center">
+        <span class="special-pill"><i class="bi bi-stars"></i> Special feature</span>
+        <h2 class="section-title scan-reveal">Packages: build finished products from your stock</h2>
+        <p class="section-sub on-dark mx-auto">Some things you sell are made from parts you keep in stock, like a shelf unit made of panels, screws and brackets. Ventra keeps the list of parts, works out everything an order needs, and updates stock when the warehouse prepares it. Try it below.</p>
+      </div>
+
+      <div class="pk">
+        <ol class="pk-steps" role="tablist" aria-label="How packages work">
+          <li><button type="button" role="tab" id="pkt1" aria-controls="pkv1" aria-selected="true"><span class="pk-num">1</span><span><b>Define the package</b><small>Name the product and list the parts that go into one unit.</small></span></button></li>
+          <li><button type="button" role="tab" id="pkt2" aria-controls="pkv2" aria-selected="false" tabindex="-1"><span class="pk-num">2</span><span><b>Sales creates an order</b><small>Choose a quantity. Ventra calculates every part needed.</small></span></button></li>
+          <li><button type="button" role="tab" id="pkt3" aria-controls="pkv3" aria-selected="false" tabindex="-1"><span class="pk-num">3</span><span><b>Follow every order</b><small>New, in-progress and completed orders in one list.</small></span></button></li>
+          <li><button type="button" role="tab" id="pkt4" aria-controls="pkv4" aria-selected="false" tabindex="-1"><span class="pk-num">4</span><span><b>Prepare and update stock</b><small>The warehouse ticks off each part and confirms. Stock is adjusted for you.</small></span></button></li>
+        </ol>
+        <p class="pk-caption" id="pkCaption" aria-hidden="true">Name the product and list the parts that go into one unit.</p>
+
+        <div class="pk-window">
+          <div class="pk-bar">
+            <img src="assets/img/ventra-icon.png" alt="" width="22" height="22">
+            <span class="pk-crumbs" id="pkCrumbs">Packages <i class="bi bi-chevron-right"></i> Rack Spacer</span>
+            <i class="bi bi-three-dots" aria-hidden="true"></i>
+          </div>
+
+          <!-- 1. The package and its parts -->
+          <div class="pk-view on" role="tabpanel" id="pkv1" aria-labelledby="pkt1">
+            <div class="pk-product">
+              <span class="pk-shelf" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+              <div class="pk-fields">
+                <div class="pk-field"><small>Package name</small><b>Rack Spacer</b></div>
+                <div class="pk-field"><small>Category</small><b>Storage</b></div>
+                <div class="pk-field wide"><small>Description</small><b>Storage rack with shelves and supports</b></div>
+              </div>
+            </div>
+            <div class="pk-table-head"><h4>Parts in one unit</h4><span class="pk-add"><i class="bi bi-plus-lg"></i> Add part</span></div>
+            <table class="pk-table">
+              <thead><tr><th>Part</th><th class="text-end">Per unit</th></tr></thead>
+              <tbody id="pkBom"></tbody>
+            </table>
+            <div class="pk-actions"><button type="button" class="pk-btn" id="pkSave">Save package</button></div>
+          </div>
+
+          <!-- 2. Sales creates an order -->
+          <div class="pk-view" role="tabpanel" id="pkv2" aria-labelledby="pkt2" hidden>
+            <div class="pk-order-top">
+              <div class="pk-prod-mini">
+                <span class="pk-shelf sm" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+                <div><b>Rack Spacer</b><span class="pk-badge">Package</span></div>
+              </div>
+              <div class="pk-qty">
+                <small id="pkQtyLabel">Quantity</small>
+                <div class="pk-stepper">
+                  <button type="button" id="pkMinus" aria-label="Decrease quantity"><i class="bi bi-dash-lg"></i></button>
+                  <output id="pkQty" aria-labelledby="pkQtyLabel">5</output>
+                  <button type="button" id="pkPlus" aria-label="Increase quantity"><i class="bi bi-plus-lg"></i></button>
+                </div>
+              </div>
+            </div>
+            <div class="pk-table-head"><h4>Parts needed, calculated for you</h4></div>
+            <table class="pk-table">
+              <thead><tr><th>Part</th><th class="text-end">Per unit</th><th class="text-end">Total (<span id="pkQtyX">×5</span>)</th></tr></thead>
+              <tbody id="pkCalc"></tbody>
+            </table>
+            <div class="pk-actions"><button type="button" class="pk-btn" id="pkCreate"><i class="bi bi-cart-plus"></i> Create order</button></div>
+          </div>
+
+          <!-- 3. Orders list -->
+          <div class="pk-view" role="tabpanel" id="pkv3" aria-labelledby="pkt3" hidden>
+            <div class="pk-filter" id="pkFilter">
+              <button type="button" data-f="all" aria-pressed="true">All</button>
+              <button type="button" data-f="new" aria-pressed="false">New</button>
+              <button type="button" data-f="progress" aria-pressed="false">In progress</button>
+              <button type="button" data-f="done" aria-pressed="false">Completed</button>
+            </div>
+            <ul class="pk-orders" id="pkOrders"></ul>
+          </div>
+
+          <!-- 4. Prepare the order -->
+          <div class="pk-view" role="tabpanel" id="pkv4" aria-labelledby="pkt4" hidden>
+            <div class="pk-order-head">
+              <span class="pk-shelf sm" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+              <div>
+                <b id="pkOid">#PKG-1058</b><span class="pk-status st-new" id="pkOstatus">New</span>
+                <small>Rack Spacer, quantity <span id="pkOqty">5</span></small>
+                <small><i class="bi bi-person"></i> Requested by Sales (Ahmed) <i class="bi bi-building ms-2"></i> Main warehouse</small>
+              </div>
+            </div>
+            <div class="pk-table-head"><h4>Parts to prepare</h4><small id="pkHint">Tick each part as you pick it.</small></div>
+            <table class="pk-table pk-check">
+              <thead><tr><th><span class="visually-hidden">Picked</span></th><th>Part</th><th class="text-end">Required</th><th class="text-end">In stock</th></tr></thead>
+              <tbody id="pkPrep"></tbody>
+            </table>
+            <div class="pk-actions"><button type="button" class="pk-btn" id="pkConfirm" disabled><i class="bi bi-check2-circle"></i> Confirm and adjust stock</button></div>
+          </div>
+
+          <div class="pk-toast" id="pkToast" role="status" aria-live="polite"></div>
+        </div>
+      </div>
+
+      <!-- Connect to an online store or sales system, on request -->
+      <div class="connect">
+        <div class="cn-visual" aria-hidden="true">
+          <span class="cn-node"><i class="bi bi-shop"></i><small>Online store</small></span>
+          <span class="cn-line"></span>
+          <span class="cn-hub"><img src="assets/img/ventra-icon.png" alt="" width="34" height="34"></span>
+          <span class="cn-line rev"></span>
+          <span class="cn-node"><i class="bi bi-receipt"></i><small>Sales system</small></span>
+        </div>
+        <div class="cn-copy">
+          <h3>Connect your online store or sales system</h3>
+          <p>We can connect Ventra to the online store or sales software you already use. Every connection is built on request to fit the way you sell.</p>
+        </div>
+        <button type="button" class="btn btn-v" id="connectBtn">Request a connection <i class="bi bi-arrow-right"></i></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ BRANDING: BUILD YOUR OWN ============ -->
+  <section id="branding" class="section paper brand-sec">
+    <div class="container">
+      <div class="row align-items-center gy-5">
+        <div class="col-lg-5">
+          <h2 class="section-title scan-reveal">Your name, logo and colours, in the app and the dashboard</h2>
+          <p class="section-sub">Your team opens an app with your company's name, logo and colours, and managers sign in to a dashboard branded the same way. Try it with your own name, colour and logo:</p>
+
+          <div class="builder">
+            <label class="b-label" for="bName">Company name</label>
+            <input id="bName" class="form-control b-input" type="text" value="Acme Joinery" maxlength="20" autocomplete="organization">
+
+            <fieldset class="b-field">
+              <legend class="b-label">Brand colour</legend>
+              <div class="swatches">
+                <input type="radio" name="bColor" id="bc1" value="#0A57E0" checked><label for="bc1" style="--c:#0A57E0" title="Blue"><span class="visually-hidden">Blue</span></label>
+                <input type="radio" name="bColor" id="bc2" value="#059669"><label for="bc2" style="--c:#059669" title="Emerald"><span class="visually-hidden">Emerald</span></label>
+                <input type="radio" name="bColor" id="bc3" value="#DC2626"><label for="bc3" style="--c:#DC2626" title="Crimson"><span class="visually-hidden">Crimson</span></label>
+                <input type="radio" name="bColor" id="bc4" value="#7C3AED"><label for="bc4" style="--c:#7C3AED" title="Violet"><span class="visually-hidden">Violet</span></label>
+                <input type="radio" name="bColor" id="bc5" value="#EA580C"><label for="bc5" style="--c:#EA580C" title="Orange"><span class="visually-hidden">Orange</span></label>
+                <input type="radio" name="bColor" id="bc6" value="#334155"><label for="bc6" style="--c:#334155" title="Graphite"><span class="visually-hidden">Graphite</span></label>
+                <label class="sw-custom" title="Pick any colour">
+                  <input type="color" id="bCustom" value="#0FA3B1">
+                  <i class="bi bi-eyedropper"></i><span class="visually-hidden">Pick any colour</span>
+                </label>
+              </div>
+            </fieldset>
+
+            <div class="b-field">
+              <span class="b-label">Your logo</span>
+              <label class="logo-drop" id="logoDrop" for="bLogo">
+                <input type="file" id="bLogo" accept="image/*">
+                <span class="ld-icon" id="ldIcon"><i class="bi bi-cloud-arrow-up"></i></span>
+                <span class="ld-copy">
+                  <b id="ldTitle">Upload your logo</b>
+                  <small id="ldText">Click or drop an image here (PNG, JPG or SVG). It appears in the preview straight away and stays on your device.</small>
+                </span>
+              </label>
+              <button type="button" class="ld-remove" id="bLogoRemove" hidden><i class="bi bi-x-lg"></i> Remove logo</button>
+            </div>
+
+            <button type="button" class="btn btn-outline-v" id="bShuffle"><i class="bi bi-shuffle"></i> Surprise me</button>
+          </div>
+        </div>
+
+        <div class="col-lg-7">
+          <div class="brand-stage" id="brandStage" style="--brand:#0A57E0; --on-brand:#fff">
+            <div class="mini-dash" aria-hidden="true">
+              <div class="md-side">
+                <div class="md-logo"><span class="brand-mark">A</span><b class="brand-name">Acme Joinery</b></div>
+                <span class="md-link active"><i class="bi bi-grid-1x2"></i> Overview</span>
+                <span class="md-link"><i class="bi bi-graph-up"></i> Reports</span>
+                <span class="md-link"><i class="bi bi-box"></i> Products</span>
+                <span class="md-link"><i class="bi bi-people"></i> People</span>
+              </div>
+              <div class="md-main">
+                <div class="md-head"><b>Overview</b><span class="md-btn">Open reports</span></div>
+                <div class="md-kpis">
+                  <div><small>Products</small><b>184</b></div>
+                  <div><small>Low stock</small><b>33</b></div>
+                  <div><small>Branches</small><b>3</b></div>
+                </div>
+                <div class="md-chart">
+                  <i style="--h:45%"></i><i style="--h:70%"></i><i style="--h:55%"></i><i style="--h:90%"></i><i style="--h:65%"></i><i style="--h:30%"></i><i style="--h:20%"></i>
+                </div>
+              </div>
+            </div>
+
+            <div class="phone phone-ui" aria-hidden="true">
+              <div class="ui">
+                <div class="ui-status"><span>9:41</span><span><i class="bi bi-reception-4"></i> <i class="bi bi-wifi"></i> <i class="bi bi-battery-full"></i></span></div>
+                <div class="ui-logo"><span class="brand-mark">A</span><b class="brand-name">Acme Joinery</b></div>
+                <div class="ui-banner"><i class="bi bi-box-seam"></i> Inventory</div>
+                <div class="ui-search"><i class="bi bi-search"></i> Search by name or barcode</div>
+                <div class="ui-chips"><span class="on">All</span><span>In stock</span><span>Low</span></div>
+                <div class="ui-item"><span class="ui-thumb"><i class="bi bi-hdd-rack"></i></span><div><b>Black Bottom Track</b><small>132 units, Aisle 3</small></div><span class="ui-pill warn">Low</span></div>
+                <div class="ui-item"><span class="ui-thumb"><i class="bi bi-gear"></i></span><div><b>Soft Close Hinge</b><small>758 units, Aisle 1</small></div><span class="ui-pill ok">In stock</span></div>
+                <div class="ui-item"><span class="ui-thumb"><i class="bi bi-bounding-box"></i></span><div><b>Glass Shelf 8mm</b><small>96 units, Glass-02</small></div><span class="ui-pill ok">In stock</span></div>
+                <div class="ui-nav">
+                  <i class="bi bi-house-door"></i><i class="bi bi-box-seam active"></i><span class="ui-scan"><i class="bi bi-qr-code-scan"></i></span><i class="bi bi-bell"></i><i class="bi bi-person"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ HOW IT WORKS: THE CONVEYOR ============ -->
+  <section id="how" class="section night how-sec">
+    <div class="container">
+      <div class="section-head text-center">
+        <h2 class="section-title scan-reveal">Up and running in four steps</h2>
+      </div>
+      <div class="conveyor" id="conveyor" style="--p:0">
+        <ol class="stations">
+          <li class="station">
+            <span class="st-num">01</span>
+            <span class="st-icon"><i class="bi bi-building-gear"></i></span>
+            <h3>Set up your organisation</h3>
+            <p>Add your branches, categories and products from the web dashboard.</p>
+          </li>
+          <li class="station">
+            <span class="st-num">02</span>
+            <span class="st-icon"><i class="bi bi-person-plus"></i></span>
+            <h3>Invite your team</h3>
+            <p>Give each person a 4-digit code. They scan your organisation's QR code in the app to connect.</p>
+          </li>
+          <li class="station">
+            <span class="st-num">03</span>
+            <span class="st-icon"><i class="bi bi-upc-scan"></i></span>
+            <h3>Scan and move stock</h3>
+            <p>Staff scan barcodes to find items and record each addition, removal or damage.</p>
+          </li>
+          <li class="station">
+            <span class="st-num">04</span>
+            <span class="st-icon"><i class="bi bi-graph-up-arrow"></i></span>
+            <h3>Track and report</h3>
+            <p>Managers watch live stock across branches, act on alerts and export reports.</p>
+          </li>
+        </ol>
+        <div class="belt" aria-hidden="true">
+          <div class="belt-surface"></div>
+          <div class="rollers"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <div class="parcel">
+            <span class="p-top"></span>
+            <span class="p-front"><span class="p-tape"></span><span class="p-label"><img src="assets/img/ventra-icon.png" alt="" width="12" height="12"><span class="p-bars"></span></span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PLANS: WATCH YOUR SETUP TAKE SHAPE ============ -->
+  <section id="plans" class="section paper plans-sec">
+    <div class="container">
+      <div class="section-head text-center">
+        <h2 class="section-title scan-reveal">A plan sized to your business</h2>
+        <p class="section-sub mx-auto">Every plan includes the full app and dashboard. Plans differ only in how many people, products and branches they cover. Set yours below and we'll quote it.</p>
+      </div>
+
+      <div class="planner">
+        <div class="pl-controls">
+          <div class="pl-row">
+            <div class="pl-top">
+              <label for="szStaff"><i class="bi bi-people"></i> Staff</label>
+              <div class="pl-step">
+                <button type="button" class="pl-btn" data-for="szStaff" data-d="-1" aria-label="Fewer staff"><i class="bi bi-dash-lg"></i></button>
+                <output id="oStaff" for="szStaff">10</output>
+                <button type="button" class="pl-btn" data-for="szStaff" data-d="1" aria-label="More staff"><i class="bi bi-plus-lg"></i></button>
+              </div>
+            </div>
+            <input type="range" class="form-range" id="szStaff" min="1" max="51" value="10">
+            <p class="pl-hint">Admins and managers who sign in to the app and dashboard.</p>
+          </div>
+          <div class="pl-row">
+            <div class="pl-top">
+              <label for="szProducts"><i class="bi bi-box-seam"></i> Products</label>
+              <div class="pl-step">
+                <button type="button" class="pl-btn" data-for="szProducts" data-d="-1" aria-label="Fewer products"><i class="bi bi-dash-lg"></i></button>
+                <output id="oProducts" for="szProducts">1,000</output>
+                <button type="button" class="pl-btn" data-for="szProducts" data-d="1" aria-label="More products"><i class="bi bi-plus-lg"></i></button>
+              </div>
+            </div>
+            <input type="range" class="form-range" id="szProducts" min="0" max="7" value="3">
+            <p class="pl-hint">Items in your catalogue. A product stocked at several branches counts once.</p>
+          </div>
+          <div class="pl-row">
+            <div class="pl-top">
+              <label for="szBranches"><i class="bi bi-buildings"></i> Branches</label>
+              <div class="pl-step">
+                <button type="button" class="pl-btn" data-for="szBranches" data-d="-1" aria-label="Fewer branches"><i class="bi bi-dash-lg"></i></button>
+                <output id="oBranches" for="szBranches">2</output>
+                <button type="button" class="pl-btn" data-for="szBranches" data-d="1" aria-label="More branches"><i class="bi bi-plus-lg"></i></button>
+              </div>
+            </div>
+            <input type="range" class="form-range" id="szBranches" min="1" max="11" value="2">
+            <p class="pl-hint">Warehouses or sites, each with its own stock and locations.</p>
+          </div>
+        </div>
+
+        <div class="pl-stage">
+          <div class="ps-head">
+            <span>Your business in Ventra</span>
+            <span class="ps-live"><span class="pulse"></span> Updates as you go</span>
+          </div>
+          <div class="ps-body" id="psBody" aria-hidden="true">
+            <svg class="ps-wires" id="psWires"></svg>
+            <div class="ps-hub" id="psHub">
+              <img src="assets/img/ventra-icon.png" alt="" width="32" height="32">
+              <div><b>Your account</b><small><span id="hubProducts">1,000</span> products in the catalogue</small></div>
+              <div class="ps-stack" id="psStack"></div>
+            </div>
+            <div class="ps-grid" id="psGrid"></div>
+          </div>
+          <div class="ps-foot">
+            <p class="ps-summary"><small>Your setup</small><span id="psSummary" aria-live="polite">10 staff, 1,000 products, 2 branches</span></p>
+            <button type="button" class="btn btn-v" id="quoteBtn">Get a quote for this setup <i class="bi bi-arrow-right"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="pl-includes">
+        <span class="pl-inc-label">Every plan includes</span>
+        <ul>
+          <li><i class="bi bi-phone"></i> iPhone and Android app</li>
+          <li><i class="bi bi-display"></i> Web dashboard</li>
+          <li><i class="bi bi-upc-scan"></i> Barcode scanning and labels</li>
+          <li><i class="bi bi-bell"></i> Low-stock alerts</li>
+          <li><i class="bi bi-clipboard-check"></i> Requests and approvals</li>
+          <li><i class="bi bi-file-earmark-pdf"></i> Reports with PDF export</li>
+          <li><i class="bi bi-journal-text"></i> Roles and audit log</li>
+          <li><i class="bi bi-palette"></i> Your own branding</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section id="faq" class="section paper faq-sec">
+    <div class="container">
+      <div class="row gy-5">
+        <div class="col-lg-4">
+          <h2 class="section-title scan-reveal">Questions, answered</h2>
+          <p class="section-sub">Can't find your answer? <a href="#contact">Get in touch</a> and we'll get back to you.</p>
+        </div>
+        <div class="col-lg-8">
+          <div class="accordion faq" id="faqList">
+            <div class="accordion-item">
+              <h3 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#q1" aria-expanded="true" aria-controls="q1">Which devices does Ventra run on?</button>
+              </h3>
+              <div id="q1" class="accordion-collapse collapse show" data-bs-parent="#faqList">
+                <div class="accordion-body">The mobile app is on iPhone (App Store) and Android (Google Play). The dashboard runs in any modern web browser at app.myventra.au.</div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h3 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q2" aria-expanded="false" aria-controls="q2">How do my staff connect to our organisation?</button>
+              </h3>
+              <div id="q2" class="accordion-collapse collapse" data-bs-parent="#faqList">
+                <div class="accordion-body">An admin adds each person in the dashboard and gives them a 4-digit code and a password. In the app, they scan your organisation's QR code or type its ID, then sign in.</div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h3 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q8" aria-expanded="false" aria-controls="q8">Can the app and dashboard use our own branding?</button>
+              </h3>
+              <div id="q8" class="accordion-collapse collapse" data-bs-parent="#faqList">
+                <div class="accordion-body">Yes. The app and the dashboard can carry your company's name, logo and colours, so your team sees them as your own tools.</div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h3 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q3" aria-expanded="false" aria-controls="q3">Can I manage more than one warehouse or branch?</button>
+              </h3>
+              <div id="q3" class="accordion-collapse collapse" data-bs-parent="#faqList">
+                <div class="accordion-body">Yes. Add as many locations as your plan allows. Each one keeps its own stock levels, and the dashboard switches between one branch and all branches.</div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h3 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q4" aria-expanded="false" aria-controls="q4">Do my products need barcodes already?</button>
+              </h3>
+              <div id="q4" class="accordion-collapse collapse" data-bs-parent="#faqList">
+                <div class="accordion-body">No. Leave the barcode field empty and Ventra generates a Code 128 barcode for the product. You can print its label straight from the app.</div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h3 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q5" aria-expanded="false" aria-controls="q5">How do low-stock alerts work?</button>
+              </h3>
+              <div id="q5" class="accordion-collapse collapse" data-bs-parent="#faqList">
+                <div class="accordion-body">Set a minimum stock level for each product. When a product falls to or below that level, it appears under Alerts as low or out of stock, and you can add stock straight from the alert.</div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h3 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q6" aria-expanded="false" aria-controls="q6">Who can see and change what?</button>
+              </h3>
+              <div id="q6" class="accordion-collapse collapse" data-bs-parent="#faqList">
+                <div class="accordion-body">Admins manage everything from the dashboard. Managers work in the app and can request new products, which an admin approves. Every action is recorded in the audit log.</div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h3 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q7" aria-expanded="false" aria-controls="q7">Can I export reports?</button>
+              </h3>
+              <div id="q7" class="accordion-collapse collapse" data-bs-parent="#faqList">
+                <div class="accordion-body">Yes. The dashboard has daily and weekly movement reports, stock by category, and low and out-of-stock lists. You can download any of them as a PDF.</div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h3 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q9" aria-expanded="false" aria-controls="q9">What are packages?</button>
+              </h3>
+              <div id="q9" class="accordion-collapse collapse" data-bs-parent="#faqList">
+                <div class="accordion-body">A package is a finished product made from parts you keep in stock, like a shelf unit made of panels, screws and brackets. You list its parts once. When sales creates an order, Ventra calculates every part needed, and when the warehouse confirms the order, stock is adjusted for you.</div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h3 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q10" aria-expanded="false" aria-controls="q10">Can Ventra connect to our online store or sales system?</button>
+              </h3>
+              <div id="q10" class="accordion-collapse collapse" data-bs-parent="#faqList">
+                <div class="accordion-body">Yes, on request. We build each connection to fit the online store or sales software you use. <a href="#contact">Send us a request</a> and tell us what you use today.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT / DEMO ============ -->
+  <section id="contact" class="section night contact-sec">
+    <div class="container">
+      <div class="row g-5 align-items-center">
+        <div class="col-lg-5">
+          <h2 class="section-title scan-reveal">See Ventra running with your own stock</h2>
+          <p class="contact-lead">Tell us about your business. We'll walk you through the app and dashboard, then recommend a plan that fits.</p>
+          <ul class="contact-list">
+            <li><i class="bi bi-envelope"></i> <a href="mailto:info@v-tech.com.au">info@v-tech.com.au</a></li>
+            <li><i class="bi bi-box-arrow-in-right"></i> <a href="https://app.myventra.au" target="_blank" rel="noopener">Already a customer? Sign in</a></li>
+            <li><i class="bi bi-code-slash"></i> Built by VTech IT Solutions</li>
+          </ul>
+        </div>
+        <div class="col-lg-7">
+          <div class="form-frame">
+            <!-- Sent by FormSubmit to info@v-tech.com.au. The first submission sends an
+                 activation email to that inbox; click "Activate Form" once and every request arrives after that. -->
+            <form id="demoForm" class="demo-form" action="https://formsubmit.co/ajax/info@v-tech.com.au" method="POST" novalidate>
+              <input type="hidden" name="_subject" value="New Ventra demo request">
+              <input type="hidden" name="_template" value="table">
+              <input type="hidden" name="_captcha" value="false">
+              <input type="text" name="_honey" class="d-none" tabindex="-1" autocomplete="off">
+              <div class="row g-3">
+                <div class="col-sm-6">
+                  <label for="fName" class="form-label">Full name *</label>
+                  <input id="fName" name="name" type="text" class="form-control" required autocomplete="name">
+                  <div class="invalid-feedback">Please enter your name.</div>
+                </div>
+                <div class="col-sm-6">
+                  <label for="fCompany" class="form-label">Company *</label>
+                  <input id="fCompany" name="company" type="text" class="form-control" required autocomplete="organization">
+                  <div class="invalid-feedback">Please enter your company.</div>
+                </div>
+                <div class="col-sm-6">
+                  <label for="fEmail" class="form-label">Work email *</label>
+                  <input id="fEmail" name="email" type="email" class="form-control" required autocomplete="email">
+                  <div class="invalid-feedback">Please enter a valid email.</div>
+                </div>
+                <div class="col-sm-6">
+                  <label for="fPhone" class="form-label">Phone</label>
+                  <input id="fPhone" name="phone" type="tel" class="form-control" autocomplete="tel">
+                </div>
+                <div class="col-12">
+                  <label for="fMsg" class="form-label">Anything we should know?</label>
+                  <textarea id="fMsg" name="message" rows="4" class="form-control" placeholder="e.g. what you stock, how many staff, products and branches you have, how you track them today"></textarea>
+                </div>
+                <div class="col-12">
+                  <button type="submit" class="btn btn-v btn-lg w-100">
+                    <span class="btn-label">Request my demo</span>
+                    <span class="spinner-border spinner-border-sm d-none" aria-hidden="true"></span>
+                  </button>
+                  <div id="formStatus" class="form-status" role="status" aria-live="polite"></div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row gy-4">
+        <div class="col-lg-5">
+          <a href="#top" class="brand brand-footer">
+            <img src="assets/img/ventra-icon.png" alt="" width="36" height="36">
+            <span>Ventra</span>
+          </a>
+          <p class="footer-text">A barcode-first mobile app and a live web dashboard for teams that move physical stock.</p>
+          <div class="store-row">
+            <a class="store-btn" href="https://apps.apple.com/app/dds-inventory/id6814044538" target="_blank" rel="noopener" aria-label="Download Ventra on the App Store">
+              <i class="bi bi-apple"></i><span><small>Download on the</small>App Store</span>
+            </a>
+            <a class="store-btn" href="https://play.google.com/store/apps/details?id=au.dds.inventory" target="_blank" rel="noopener" aria-label="Get Ventra on Google Play">
+              <i class="bi bi-google-play"></i><span><small>Get it on</small>Google Play</span>
+            </a>
+          </div>
+        </div>
+        <div class="col-6 col-lg-3 offset-lg-1">
+          <h4>Product</h4>
+          <ul>
+            <li><a href="#app">Mobile app</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#dashboard">Dashboard</a></li>
+            <li><a href="#packages">Packages and orders</a></li>
+            <li><a href="#branding">Your branding</a></li>
+            <li><a href="#plans">Plans</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-lg-3">
+          <h4>Company</h4>
+          <ul>
+            <li>VTech IT Solutions</li>
+            <li><a href="mailto:info@v-tech.com.au">info@v-tech.com.au</a></li>
+            <li><a href="https://app.myventra.au" target="_blank" rel="noopener">Dashboard sign in</a></li>
+            <li><a href="#contact">Request a demo</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-mark" aria-hidden="true"><span>Ventra</span></div>
+      <div class="footer-bottom">
+        <span>© <span id="year">2026</span> Ventra. All rights reserved. · <a href="https://myventra.au/privacy/">Privacy Policy</a></span>
+        <span>Built by <strong>VTech IT Solutions</strong></span>
+      </div>
+    </div>
+  </footer>
+
+  <a href="#top" class="to-top" aria-label="Back to top"><i class="bi bi-arrow-up"></i></a>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
